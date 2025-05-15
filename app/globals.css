@@ -1,2 +1,39 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+:root {
+  --brr-bg-color: #1e2330;
+  --brr-text-color: #ffffff;
+  --brr-text-muted: #d1d5db;
+  --brr-muted: #374151;
+  --brr-border-color: #374151;
+  --brr-primary: #2563eb;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: theme('fontFamily.sans');
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+  background-color: var(--brr-bg-color);
+  color: var(--brr-text-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
