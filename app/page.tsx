@@ -58,7 +58,7 @@ export default function Dashboard() {
           Welcome back, {name}!
         </h1>
         <p className="mt-2 text-white/80">
-          {team} team's updates — don’t forget,{" "}
+          {team} team&apos;s updates — don&apos;t forget,{" "}
           <span className="font-semibold text-white">{quote}</span>
         </p>
       </header>
