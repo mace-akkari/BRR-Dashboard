@@ -36,7 +36,7 @@ export const tickets: Ticket[] = [
   {
     id: 105,
     user: "mohamed@brrmedia.co.uk",
-    issue: "Resolved",
+    issue: "React developer",
     description: "Need a React frontend developer",
     status: "In Progress",
     created: "2025-05-07T10:00:00Z",
@@ -44,10 +44,10 @@ export const tickets: Ticket[] = [
   {
     id: 106,
     user: "andy@brrmedia.co.uk",
-    issue: "Resolved",
+    issue: "Hardware",
     description: "Request for a second monitor for my workstation",
     status: "In Progress",
-    created: "2023-05-07T18:10:00Z",
+    created: "2025-05-07T18:10:00Z",
   },
 ];
 
