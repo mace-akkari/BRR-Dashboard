@@ -1,4 +1,4 @@
-import type { Ticket, Todo } from "./types";
+import type { StaffMember, Ticket, Todo } from "./types";
 
 export const tickets: Ticket[] = [
   {
@@ -76,5 +76,68 @@ export const todos: Todo[] = [
     id: 5,
     title: "Update system",
     completed: false,
+  },
+];
+
+export const staffMembers: StaffMember[] = [
+  {
+    id: 1,
+    name: "John Doe",
+    role: "Software Developer",
+    email: "jdoe@brrmedia.co.uk",
+    status: "active",
+    lastLogin: "2025-05-16T09:30:00Z",
+    driveUsage: "2.3 GB",
+    device: "MacBook Pro",
+  },
+  {
+    id: 2,
+    name: "Mohamed Virji",
+    role: "Head of Technology",
+    email: "mvirji@brrmedia.co.uk",
+    status: "active",
+    lastLogin: "2025-05-15T17:15:00Z",
+    driveUsage: "1.7 GB",
+    device: "Windows PC",
+  },
+  {
+    id: 3,
+    name: "Robert Johnson",
+    role: "UI/UX Designer",
+    email: "rjohnson@brrmedia.co.uk",
+    status: "inactive",
+    lastLogin: "2025-05-13T10:00:00Z",
+    driveUsage: "4.1 GB",
+    device: "iPad Pro",
+  },
+  {
+    id: 4,
+    name: "Emily Davis",
+    role: "QA Engineer",
+    email: "edavis@brrmedia.co.uk",
+    status: "active",
+    lastLogin: "2025-05-16T11:45:00Z",
+    driveUsage: "0.8 GB",
+    device: "Dell XPS",
+  },
+  {
+    id: 5,
+    name: "Michael Wilson",
+    role: "DevOps Engineer",
+    email: "mwilson@brrmedia.co.uk",
+    status: "active",
+    lastLogin: "2025-05-16T10:20:00Z",
+    driveUsage: "3.5 GB",
+    device: "ThinkPad",
+  },
+  {
+    id: 6,
+    name: "Sarah Brown",
+    role: "Data Analyst",
+    email: "sbrown@brrmedia.co.uk",
+    status: "inactive",
+    lastLogin: "2025-05-09T08:00:00Z",
+    driveUsage: "2.9 GB",
+    device: "Surface Pro",
   },
 ];

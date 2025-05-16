@@ -22,3 +22,15 @@ export interface Todo {
   title: string;
   completed: boolean;
 }
+
+export interface StaffMember {
+  id: number;
+  name: string;
+  role: string;
+  email: string;
+  status: "active" | "inactive";
+  avatar?: string;
+  lastLogin?: string;
+  driveUsage?: string;
+  device?: string;
+}
