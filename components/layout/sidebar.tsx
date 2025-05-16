@@ -69,7 +69,10 @@ export default function Sidebar() {
       <aside className="hidden w-64 flex-shrink-0 border-r border-border bg-background md:block">
         <div className="flex flex-col h-full">
           <header className="h-16 px-6 flex items-center">
-            <h1 className="text-xl font-bold text-text">BRR Media Portal</h1>
+            <h1 className="text-xl font-bold text-text">
+              <span className="text-red-500">BRR</span>{" "}
+              <span className="text-gray-300">Media Portal</span>
+            </h1>
           </header>
 
           <nav className="flex-1 py-4 px-3" aria-label="Sidebar navigation">
