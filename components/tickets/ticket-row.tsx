@@ -64,33 +64,42 @@ export function TicketRow({ ticket }: TicketRowProps) {
   const statusChip = getStatusChip(ticket.status);
 
   return (
-    <article className="mb-3 flex flex-col space-y-2 rounded-lg border border-gray-700 bg-[#2a3042] p-4 shadow-sm md:flex-row md:items-center md:justify-between md:space-y-0">
-      <div className="space-y-1">
-        <h3 className="font-medium text-white">{ticket.issue}</h3>
-        <p className="text-sm text-gray-300 line-clamp-2">
-          {ticket.description}
-        </p>
+    <article className="mb-4 flex flex-col rounded-xl border border-gray-700 bg-[#1f2937] p-5 shadow-sm md:flex-row md:items-center md:justify-between">
+      <div className="md:max-w-[60%]">
+        <h3 className="text-lg font-semibold text-white">{ticket.issue}</h3>
+        <p className="mt-1 text-sm text-gray-400">{ticket.description}</p>
       </div>
-      <div className="flex items-center gap-2">
-        <Chip
-          label={new Date(ticket.created).toLocaleDateString("en-GB")}
-          variant="outlined"
-          size="small"
-          sx={{
-            borderColor: "rgba(255,255,255,0.2)",
-            color: "white",
-            fontWeight: 500,
-            borderRadius: "9999px",
-          }}
-        />
-        <Chip
-          icon={statusChip.icon}
-          label={statusChip.label}
-          size="small"
-          sx={statusChip.sx}
-          aria-label={`Status: ${statusChip.label}`}
-          title={`Status: ${statusChip.label}`}
-        />
+
+      <div className="mt-3 flex w-[240px] items-center justify-between gap-2 md:mt-0">
+        <div className="w-fit">
+          <Chip
+            label={new Date(ticket.created).toLocaleDateString("en-GB")}
+            variant="outlined"
+            size="small"
+            sx={{
+              borderColor: "rgba(255,255,255,0.2)",
+              color: "white",
+              fontWeight: 500,
+              borderRadius: "9999px",
+              px: 1.5,
+              whiteSpace: "nowrap",
+            }}
+          />
+        </div>
+        <div className="w-fit">
+          <Chip
+            icon={statusChip.icon}
+            label={statusChip.label}
+            size="small"
+            sx={{
+              ...statusChip.sx,
+              px: 1.5,
+              whiteSpace: "nowrap",
+            }}
+            aria-label={`Status: ${statusChip.label}`}
+            title={`Status: ${statusChip.label}`}
+          />
+        </div>
       </div>
     </article>
   );
