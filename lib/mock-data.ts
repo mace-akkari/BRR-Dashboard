@@ -53,27 +53,27 @@ export const tickets: Ticket[] = [
 
 export const todos: Todo[] = [
   {
-    id: 1,
+    id: "1",
     title: "Complete project documentation",
     completed: false,
   },
   {
-    id: 2,
+    id: "2",
     title: "Review pull requests",
     completed: true,
   },
   {
-    id: 3,
+    id: "3",
     title: "Prepare for team meeting",
     completed: false,
   },
   {
-    id: 4,
+    id: "4",
     title: "Complete dashboard project",
     completed: true,
   },
   {
-    id: 5,
+    id: "5",
     title: "Update system",
     completed: false,
   },
