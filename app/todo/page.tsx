@@ -94,12 +94,13 @@ export default function TodoPage() {
               }}
             />
             <Button
+              type="submit"
               variant="contained"
               disableElevation
               sx={{
-                backgroundColor: "#1e3a8a", // blue-900
+                backgroundColor: "#1e3a8a",
                 "&:hover": {
-                  backgroundColor: "#1d4ed8", // blue-700
+                  backgroundColor: "#1d4ed8",
                 },
               }}
             >
