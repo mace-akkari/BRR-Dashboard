@@ -1,0 +1,24 @@
+import type { ReactNode } from "react";
+
+export interface StatCardProps {
+  title: string;
+  value: string | number;
+  icon: ReactNode;
+  description?: string;
+  className?: string;
+}
+
+export interface Ticket {
+  id: number;
+  user: string;
+  issue: string;
+  description: string;
+  status: "Open" | "In Progress" | "Resolved";
+  created: string;
+}
+
+export interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+}
