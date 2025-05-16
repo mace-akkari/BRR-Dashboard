@@ -97,7 +97,7 @@ export default function TodoPage() {
               type="submit"
               variant="contained"
               startIcon={<AddIcon />}
-              className="bg-blue-600 hover:bg-blue-700 whitespace-nowrap"
+              className="bg-blue-900 hover:bg-blue-700 whitespace-nowrap"
             >
               Add
             </Button>
