@@ -38,9 +38,7 @@ export default function TodoPage() {
 
   const editTodo = (id: string, newText: string) => {
     setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, title: newText } : todo
-      )
+      todos.map((todo) => (todo.id === id ? { ...todo, title: newText } : todo))
     );
   };
 
@@ -55,7 +53,10 @@ export default function TodoPage() {
         className="rounded-lg border border-gray-700 bg-[#2a3042] shadow-sm"
       >
         <div className="border-b border-gray-700 p-4">
-          <h2 id="task-section-title" className="text-lg font-medium text-white">
+          <h2
+            id="task-section-title"
+            className="text-lg font-medium text-white"
+          >
             My Tasks
           </h2>
         </div>
@@ -94,12 +95,16 @@ export default function TodoPage() {
               }}
             />
             <Button
-              type="submit"
               variant="contained"
-              startIcon={<AddIcon />}
-              className="bg-blue-900 hover:bg-blue-700 whitespace-nowrap"
+              disableElevation
+              sx={{
+                backgroundColor: "#1e3a8a", // blue-900
+                "&:hover": {
+                  backgroundColor: "#1d4ed8", // blue-700
+                },
+              }}
             >
-              Add
+              ADD
             </Button>
           </form>
 
