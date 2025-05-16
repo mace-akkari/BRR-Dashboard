@@ -4,7 +4,6 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { TodoItem } from "@/components/todo/todo-item";
 import { TextField, Button } from "@mui/material";
-import { Add as AddIcon } from "@mui/icons-material";
 import type { Todo } from "@/lib/types";
 import { todos as initialTodos } from "@/lib/mock-data";
 
