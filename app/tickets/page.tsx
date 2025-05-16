@@ -78,7 +78,7 @@ export default function TicketsPage() {
           <div className="rounded-lg border border-dashed border-gray-600 p-8 text-center">
             <h2 className="text-lg font-medium text-white">No tickets found</h2>
             <p className="text-sm text-gray-400">
-              You haven'&apos;t submitted any IT support tickets yet.
+              You haven&apos;t submitted any IT support tickets yet.
             </p>
           </div>
         ) : (
