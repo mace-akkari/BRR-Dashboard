@@ -72,35 +72,31 @@ export default function Header() {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const handleClose = () => setAnchorEl(null);
 
   const handleNotifClick = (event: React.MouseEvent<HTMLElement>) => {
     setNotifAnchorEl(event.currentTarget);
   };
 
-  const handleNotifClose = () => {
-    setNotifAnchorEl(null);
-  };
+  const handleNotifClose = () => setNotifAnchorEl(null);
 
   const notifOpen = Boolean(notifAnchorEl);
   const notifId = notifOpen ? "notifications-popover" : undefined;
 
   return (
     <header className="sticky top-0 z-30 w-full border-b bg-background px-4 sm:px-6">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between h-auto sm:h-16 py-2 sm:py-0">
-        <div className="flex justify-center sm:justify-start mb-2 sm:mb-0">
+      <div className="relative flex items-center justify-between h-16 w-full">
+        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:static sm:transform-none">
           <Image
             src="/logo.png"
             alt="BRR Media Logo"
-            width={120}
+            width={140}
             height={40}
             className="h-10 w-auto object-contain"
             priority
           />
         </div>
-        <div className="flex justify-center sm:justify-end items-center gap-4">
+        <div className="flex items-center gap-4 ml-auto">
           <button
             className="relative rounded-full p-2 text-text-muted hover:bg-muted"
             aria-label="Notifications"
@@ -110,62 +106,7 @@ export default function Header() {
               <NotificationsIcon />
             </Badge>
           </button>
-          <Popover
-            id={notifId}
-            open={notifOpen}
-            anchorEl={notifAnchorEl}
-            onClose={handleNotifClose}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "center",
-            }}
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "center",
-            }}
-            slotProps={{
-              paper: {
-                sx: {
-                  backgroundColor: "var(--brr-bg-color)",
-                  color: "var(--brr-text-color)",
-                  px: 0,
-                  py: 0.5,
-                  borderRadius: "0.75rem",
-                  minWidth: 280,
-                  maxHeight: 300,
-                  overflowY: "auto",
-                  boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                },
-              },
-            }}
-          >
-            <div className="px-4 pt-3 pb-1">
-              <Typography variant="subtitle1" className="font-medium text-text">
-                You have {notifications.length} notifications
-              </Typography>
-            </div>
-            <Divider sx={{ borderColor: "rgba(255, 255, 255, 0.1)", mb: 1 }} />
 
-            <List disablePadding>
-              {notifications.map((notification) => (
-                <ListItem
-                  key={notification.id}
-                  disableGutters
-                  className="px-4 py-2 transition-colors duration-150 rounded-md hover:bg-muted cursor-pointer"
-                >
-                  <div>
-                    <p className="text-sm font-medium text-text">
-                      {notification.title}
-                    </p>
-                    <p className="text-xs text-text-muted">
-                      {notification.detail}
-                    </p>
-                  </div>
-                </ListItem>
-              ))}
-            </List>
-          </Popover>
           <button
             onClick={handleMenu}
             className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-text hover:bg-border border border-white/20 shadow-md"
@@ -177,6 +118,53 @@ export default function Header() {
           </button>
         </div>
       </div>
+
+      <Popover
+        id={notifId}
+        open={notifOpen}
+        anchorEl={notifAnchorEl}
+        onClose={handleNotifClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        transformOrigin={{ vertical: "top", horizontal: "center" }}
+        slotProps={{
+          paper: {
+            sx: {
+              backgroundColor: "var(--brr-bg-color)",
+              color: "var(--brr-text-color)",
+              px: 0,
+              py: 0.5,
+              borderRadius: "0.75rem",
+              minWidth: 280,
+              maxHeight: 300,
+              overflowY: "auto",
+              boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)",
+              border: "1px solid rgba(255, 255, 255, 0.15)",
+            },
+          },
+        }}
+      >
+        <div className="px-4 pt-3 pb-1">
+          <Typography variant="subtitle1" className="font-medium text-text">
+            You have {notifications.length} notifications
+          </Typography>
+        </div>
+        <Divider sx={{ borderColor: "rgba(255, 255, 255, 0.1)", mb: 1 }} />
+        <List disablePadding>
+          {notifications.map((n) => (
+            <ListItem
+              key={n.id}
+              disableGutters
+              className="px-4 py-2 transition-colors duration-150 rounded-md hover:bg-muted cursor-pointer"
+            >
+              <div>
+                <p className="text-sm font-medium text-text">{n.title}</p>
+                <p className="text-xs text-text-muted">{n.detail}</p>
+              </div>
+            </ListItem>
+          ))}
+        </List>
+      </Popover>
+
       <Menu
         id="menu-appbar"
         anchorEl={anchorEl}
